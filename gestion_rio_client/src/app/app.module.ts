@@ -3,10 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PointsfocauxComponent } from './pointsfocaux/pointsfocaux.component';
 import { PointfocalComponent } from './pointfocal/pointfocal.component';
 import {PointFocalMockService} from './pointfocal/pointfocal.mock.service';
-import {Pointfocal} from '/shared/pointfocal';
+import {Pointfocal} from './shared/pointfocal';
 
 @NgModule({
   declarations: [

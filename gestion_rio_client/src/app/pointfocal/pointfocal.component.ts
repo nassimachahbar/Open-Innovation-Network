@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PointFOcalMockService} from './pointfocal.mock.service';
+import {PointFocalMockService} from './pointfocal.mock.service';
 import {Pointfocal} from '../shared/pointfocal';
 
 @Component({
