@@ -47,7 +47,7 @@
                     <label>Budget alloué total</label>
                     <input type="text" class="form-control" formControlName="budget_total"/>
                     </div>
-                    <button class="big-btn btn-success">Ajouter</button>
+                    <button class="big-btn btn-success" [disabled]="pointfocalForm.prestine || pointfocalForm.invalid">Ajouter</button>
           </form>
         </div>
         <div class="class-footer">

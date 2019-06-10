@@ -10,7 +10,8 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {SidebarComponent} from './sidebar/sidebar.component';
 import {ContentComponent} from './content/content.component';
 import { VisualisationComponent} from './visualisation/visualisation.component';
-
+import {PointfocalService} from './pointfocal/pointfocal.service';
+import {HttpClientModule} from '@angular/common/http' ;
 
 @NgModule({
   declarations: [
@@ -19,14 +20,15 @@ import { VisualisationComponent} from './visualisation/visualisation.component';
     NavbarComponent,
     SidebarComponent,
     ContentComponent,
-    VisualisationComponent
+    VisualisationComponent,
+    PointfocalService
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [PointFocalMockService],
+  providers: [PointFocalMockService,PointfocalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
