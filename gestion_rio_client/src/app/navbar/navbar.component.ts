@@ -6,7 +6,7 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  @Input()
+  //@Input()
   Sidebar : boolean ;
 
   @Output()
@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
   }
   showSideBar(){
     this.Sidebar = !this.Sidebar ;
-    this.showsidebarchange.emit(this.sidebar);
+    this.showsidebarchange.emit(this.Sidebar);
   }
 
 }
