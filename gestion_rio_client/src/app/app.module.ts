@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {ReactiveFormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app.routine.module';
 import { AppComponent } from './app.component';
@@ -22,7 +23,8 @@ import { VisualisationComponent} from './visualisation/visualisation.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [PointFocalMockService],
   bootstrap: [AppComponent]

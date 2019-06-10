@@ -20,5 +20,38 @@
         </tbody>
         </table>
     </div>
+    <div class="col-lg-5">
+      <div class="card">
+        <div class="card-header bg-info text-white">
+          Ajouter point focal
+        </div>
+        <div class="card-body">
+          <form [formGroup]="pointfocalForm">
+            <div class="form-group">
+              <label>ID du point focal</label>
+              <input type="text" class="form-control" formControlName="id_point_focal"/>
+              </div>
+              <div class="alert alert-danger" *ngIf="pointfocalForm.controls['id_point_focal'].invalid &&
+              (pointfocalForm.controls['id_point_focal'].touched)|| pointfocalForm.controls['id_point_focal'].dirty">
+                l'id du point focal est Obligatoire !
+              </div>
+              <div class="form-group">
+                <label>Nom de l'etablissement</label>
+                <input type="text" class="form-control" formControlName="nom_etablissement"/>
+                </div>
+                <div class="form-group">
+                  <label>Budge octroyé</label>
+                  <input type="text" class="form-control" formControlName="budget_octroye"/>
+                  </div>
+                  <div class="form-group">
+                    <label>Budget alloué total</label>
+                    <input type="text" class="form-control" formControlName="budget_total"/>
+                    </div>
+                    <button class="big-btn btn-success">Ajouter</button>
+          </form>
+        </div>
+        <div class="class-footer">
+          </div>
+    </div>
 </div>
 </div>
