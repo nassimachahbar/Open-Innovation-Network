@@ -5,7 +5,8 @@ import {VisualisationComponent} from './visualisation/visualisation.component';
 
 export const appRoutes : Routes = [
   {path:'pointfocal',component : PointfocalComponent},
-  {path: 'visualisation',component :VisualisationComponent}
+  {path: 'visualisation',component :VisualisationComponent},
+  {path:'' ,redirectTo : '/visualisation',pathMatch: 'full'}
 ];
 @NgModule({
   imports :[
