@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PointFocalMockService} from './pointfocal.mock.service';
+import {PointfocalService} from './pointfocal.service';
 import {Pointfocal} from '../shared/pointfocal';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 
@@ -11,7 +11,7 @@ import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 export class PointfocalComponent implements OnInit {
   pointfocaux : Pointfocal[];
   pointfocalForm : FormGroup;
-  constructor(private pointfocalService:PointFocalMockService,private fb:FormBuilder) {
+  constructor(private pointfocalService:PointfocalService,private fb:FormBuilder) {
   this.pointfocalForm = this.fb.group({
     id_point_focal : ['',Validators.required],
     nom_etablissement:'',
@@ -21,7 +21,15 @@ export class PointfocalComponent implements OnInit {
  }
 
   ngOnInit() {
-    this.pointfocaux = this.pointfocalService.getPointsfocaux();
+    this.loadPointsfocaux();
+  }
+
+  loadPointsfocaux(){
+    this.pointfocalService.getPointsfocaux().subscribe(
+      data => {this.pointfocaux = data},
+      error => {console.log('an error has occured !')},
+      () => {console.log('Loading focal points was successful !')}
+    );
   }
 
 }
