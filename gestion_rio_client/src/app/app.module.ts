@@ -1,13 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app.routine.module';
 import { AppComponent } from './app.component';
 import { PointfocalComponent } from './pointfocal/pointfocal.component';
 import {PointFocalMockService} from './pointfocal/pointfocal.mock.service';
 import {Pointfocal} from './shared/pointfocal';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { ContentComponent } from './content/content.component';
+import {NavbarComponent} from './navbar/navbar.component';
+import {SidebarComponent} from './sidebar/sidebar.component';
+import {ContentComponent} from './content/content.component';
+import { VisualisationComponent} from './visualisation/visualisation.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { ContentComponent } from './content/content.component';
     PointfocalComponent,
     NavbarComponent,
     SidebarComponent,
-    ContentComponent
+    ContentComponent,
+    VisualisationComponent
   ],
   imports: [
     BrowserModule,
