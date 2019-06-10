@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   showHideSideBar: boolean = false ;
   title = 'rio1';
-  onshowsidebarchange(showHideSideBar){
-    this.showHideSideBar = this.showHideSideBar ;
+  onShowSideBarChange(showHideSideBar){
+    this.showHideSideBar = showHideSideBar ;
   }
 }
