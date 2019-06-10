@@ -3,7 +3,7 @@
     <app-sidebar></app-sidebar>
   </div>
 <div class="col-lg-10">
-  <app-navbar 
+  <app-navbar [Sidebar]="showSideBar"
   (showsidebarchange)="onshowsidebarchange($event)"
   ></app-navbar>
   <app-content></app-content>
