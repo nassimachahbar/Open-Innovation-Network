@@ -21,14 +21,13 @@ import {HttpClientModule} from '@angular/common/http' ;
     SidebarComponent,
     ContentComponent,
     VisualisationComponent,
-    PointfocalService
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [PointFocalMockService,PointfocalService],
+  providers: [PointFocalMockService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

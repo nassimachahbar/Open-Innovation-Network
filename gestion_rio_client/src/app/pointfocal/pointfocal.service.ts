@@ -9,7 +9,7 @@ import {PointFocalMockService} from '../pointfocal/pointfocal.mock.service'
 export class PointfocalService{
   constructor(private http:HttpClient){
   }
-    getPointsfocaux() : Observable<any> {
-      return this.http.get(API_URLS.POINTFOCAUX_URLS);
-    }
+    //getPointsfocaux() : Observable<any> {
+      //return this.http.get(API_URLS.POINTFOCAUX_URLS);
+    //}
   }
