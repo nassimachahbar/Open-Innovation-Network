@@ -5,11 +5,17 @@ import { AppComponent } from './app.component';
 import { PointfocalComponent } from './pointfocal/pointfocal.component';
 import {PointFocalMockService} from './pointfocal/pointfocal.mock.service';
 import {Pointfocal} from './shared/pointfocal';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PointfocalComponent
+    PointfocalComponent,
+    NavbarComponent,
+    SidebarComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
