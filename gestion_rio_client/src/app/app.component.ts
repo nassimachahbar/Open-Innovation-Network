@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  showHideSideBar: boolean = false 
+  showHideSideBar: boolean = false ;
   title = 'rio1';
+  onshowsidebarchange(showHideSideBar){
+    this.showHideSideBar = this.showHideSideBar ;
+  }
 }
