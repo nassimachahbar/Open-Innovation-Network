@@ -32,4 +32,13 @@ export class PointfocalComponent implements OnInit {
     );
   }
 
+  addPointfocal(){
+    const pf = this.pointfocalForm.value;
+    this.pointfocalService.addPointfocal(pf).subscribe(
+      res => {
+        this.loadPointsfocaux();
+      }
+    );
+  }
+
 }

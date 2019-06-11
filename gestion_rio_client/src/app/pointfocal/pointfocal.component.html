@@ -8,6 +8,7 @@
           <th>nom de l'établissement</th>
           <th>budget octroye</th>
           <th>budget_total</th>
+          <th><button class="big-btn btn-outline-primary">Ajouter</button></th>
         </tr>
         </thead>
         <tbody>
@@ -16,6 +17,8 @@
             <td>{{pointfocal.nom_etablissement}}</td>
             <td>{{pointfocal.budget_octroye}}</td>
             <td>{{pointfocal.budget_total}}</td>
+            <td><button class="big-btn btn-outline-primary">Modifier</button></td>
+            <td><button class="big-btn btn-outline-danger">Delete</button></td>
             </tr>
         </tbody>
         </table>
@@ -47,7 +50,8 @@
                     <label>Budget alloué total</label>
                     <input type="text" class="form-control" formControlName="budget_total"/>
                     </div>
-                    <button class="big-btn btn-success" [disabled]="pointfocalForm.prestine || pointfocalForm.invalid">Ajouter</button>
+                    <button class="big-btn btn-success" [disabled]="pointfocalForm.prestine || pointfocalForm.invalid
+                    " (click) = "addPointfocal()">Ajouter</button>
           </form>
         </div>
         <div class="class-footer">
