@@ -14,12 +14,7 @@ export class PointfocalComponent implements OnInit {
   operation : string = 'Ajouter';
   selectedPointfocal : Pointfocal ;
   constructor(private pointfocalService:PointfocalService,private fb:FormBuilder) {
-  this.pointfocalForm = this.fb.group({
-    id_point_focal : ['',Validators.required],
-    nom_etablissement:'',
-    budget_octroye : '',
-    budget_total:''
-  })
+    this.createForm();
  }
 
   ngOnInit() {
@@ -39,13 +34,14 @@ export class PointfocalComponent implements OnInit {
     const pf = this.pointfocalForm.value;
     this.pointfocalService.addPointfocal(pf).subscribe(
       res => {
+        this.initPointfocal();
         this.loadPointsfocaux();
       }
     );
   }
 
   updatePointfocal(){
-    this.pointfocalService.updatePointfocal(null).subscribe(
+    this.pointfocalService.updatePointfocal(this.selectedPointfocal).subscribe(
       res => {
         this.initPointfocal();
         this.loadPointsfocaux();
@@ -55,6 +51,24 @@ export class PointfocalComponent implements OnInit {
 
   initPointfocal(){
     this.selectedPointfocal = new Pointfocal(null,null,null,null) ;
+  }
+
+  createForm(){
+    this.pointfocalForm = this.fb.group({
+      id_point_focal : ['',Validators.required],
+      nom_etablissement:'',
+      budget_octroye : '',
+      budget_total:''
+    });
+  }
+
+  deletePointfocal(){
+    this.pointfocalService.deletePointfocal(this.selectedPointfocal.id_point_focal).subscribe(
+      res => {
+        this.selectedPointfocal = new Pointfocal(null,null,null,null);
+        this.loadPointsfocaux();
+      }
+    );
   }
 
 }
