@@ -9,10 +9,9 @@ import {Pointfocal} from './shared/pointfocal';
 import {NavbarComponent} from './navbar/navbar.component';
 import {SidebarComponent} from './sidebar/sidebar.component';
 import {ContentComponent} from './content/content.component';
-import { VisualisationComponent} from './visualisation/visualisation.component';
-import {PointfocalService} from './pointfocal/pointfocal.service';
 import {HttpClientModule} from '@angular/common/http' ;
 import { HttpModule } from '@angular/http';
+import {VisualisationComponent} from './visualisation/visualisation.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,7 @@ import { HttpModule } from '@angular/http';
     NavbarComponent,
     SidebarComponent,
     ContentComponent,
-    VisualisationComponent,
+    VisualisationComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +29,7 @@ import { HttpModule } from '@angular/http';
     HttpClientModule,
     HttpModule
   ],
-  providers: [PointfocalService],
+  providers: [PointfocalService,PointfocalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
