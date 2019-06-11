@@ -29,13 +29,12 @@
           {{operation == 'Ajouter' ? 'Ajouter Point Focal' :
             operation == 'Modifier' ? 'Modifier Point Focal' :
             operation == 'Supprimer' ? 'Supprimer Point Focal' : '' }}
-          Ajouter point focal
         </div>
         <div class="card-body">
           <form [formGroup]="pointfocalForm">
             <div class="form-group">
               <label>ID du point focal</label>
-              <input type="text" class="form-control" formControlName="id_point_focal" [(NgModel)]="selectedPointfocal.id_point_focal"/>
+              <input type="text" class="form-control" formControlName="id_point_focal" [(ngModel)]="selectedPointfocal.id_point_focal"/>
               </div>
               <div class="alert alert-danger" *ngIf="pointfocalForm.controls['id_point_focal'].invalid &&
               (pointfocalForm.controls['id_point_focal'].touched)|| pointfocalForm.controls['id_point_focal'].dirty">
@@ -43,19 +42,19 @@
               </div>
               <div class="form-group">
                 <label>Nom de l'etablissement</label>
-                <input type="text" class="form-control" formControlName="nom_etablissement" [(NgModel)]="selectedPointfocal.nom_etablissement"/>
+                <input type="text" class="form-control" formControlName="nom_etablissement" [(ngModel)]="selectedPointfocal.nom_etablissement"/>
                 </div>
                 <div class="form-group">
                   <label>Budge octroyé</label>
-                  <input type="text" class="form-control" formControlName="budget_octroye" [(NgModel)]="selectedPointfocal.budget_octroye"/>
+                  <input type="text" class="form-control" formControlName="budget_octroye" [(ngModel)]="selectedPointfocal.budget_octroye"/>
                   </div>
                   <div class="form-group">
                     <label>Budget alloué total</label>
-                    <input type="text" class="form-control" formControlName="budget_total" [(NgModel)]="selectedPointfocal.budget_total"/>
+                    <input type="text" class="form-control" formControlName="budget_total" [(ngModel)]="selectedPointfocal.budget_total"/>
                     </div>
                     <button class="big-btn btn-success" [disabled]="pointfocalForm.prestine || pointfocalForm.invalid
-                    " (click) = "operation == 'Ajouter' ? addPointfocal() : updatePointfocal() "> {{operation == 'Ajouter' ? 'Ajouter Point Focal' :
-                                operation == 'Modifier' ? 'Modifier Point Focal':'' }}</button>
+                    " (click) = "operation == 'Ajouter' ? addPointfocal() : updatePointfocal() "> {{operation == 'Ajouter' ? 'Ajouter' :
+                                operation == 'Modifier' ? 'Modifier':'' }}</button>
           </form>
         </div>
         <div class="class-footer">
