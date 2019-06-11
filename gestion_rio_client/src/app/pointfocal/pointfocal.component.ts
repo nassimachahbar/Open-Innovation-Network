@@ -11,6 +11,8 @@ import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 export class PointfocalComponent implements OnInit {
   pointfocaux : Pointfocal[];
   pointfocalForm : FormGroup;
+  operation : string = 'Ajouter';
+  selectedPointfocal : Pointfocal ;
   constructor(private pointfocalService:PointfocalService,private fb:FormBuilder) {
   this.pointfocalForm = this.fb.group({
     id_point_focal : ['',Validators.required],
@@ -21,6 +23,7 @@ export class PointfocalComponent implements OnInit {
  }
 
   ngOnInit() {
+    this.initPointfocal();
     this.loadPointsfocaux();
   }
 
@@ -39,6 +42,19 @@ export class PointfocalComponent implements OnInit {
         this.loadPointsfocaux();
       }
     );
+  }
+
+  updatePointfocal(){
+    this.pointfocalService.updatePointfocal(null).subscribe(
+      res => {
+        this.initPointfocal();
+        this.loadPointsfocaux();
+      }
+    );
+  }
+
+  initPointfocal(){
+    this.selectedPointfocal = new Pointfocal(null,null,null,null) ;
   }
 
 }
